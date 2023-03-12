@@ -5,22 +5,22 @@ USE dbSprintPI;
 CREATE TABLE tbEmpresa (
   idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
   nomeEmpresa VARCHAR (60) NOT NULL,
-  cnpjEmpresa CHAR (14) NOT NULL,
+  cnpjEmpresa CHAR (18) NOT NULL,
   segmento VARCHAR (20) NOT NULL,
-  telEmpresa CHAR (10) NOT NULL,
+  telEmpresa CHAR (13) NOT NULL,
   emailEmpresa VARCHAR (55) NOT NULL,
-  ruaEmpresa VARCHAR  (150) NOT NULL,
+  ruaEmpresa VARCHAR  (80) NOT NULL,
   numeroEndereco VARCHAR (5) NOT NULL,
-  bairroEndereco VARCHAR (100),
+  bairroEndereco VARCHAR (80),
   cidadeEndereco VARCHAR (100) NOT NULL,
   complemento VARCHAR (20)
 );
-
+drop table tbEmpresa;
 CREATE TABLE tbUsuario (
   idUsuario INT PRIMARY KEY AUTO_INCREMENT,
-  nomeUsuario VARCHAR (60) NOT NULL,
-  senhaUsuario VARCHAR (60) NOT NULL,
-  permissoes CHAR  (13) NOT NULL,
+  nomeUsuario VARCHAR (40) NOT NULL,
+  senhaUsuario VARCHAR (35) NOT NULL,
+  permissoes CHAR (13) NOT NULL,
   idEmpresa INT
 );
 
@@ -42,8 +42,6 @@ CREATE TABLE tbEntradaSensor (
   dtEntrada DATETIME NOT NULL,
   idSensor INT
 );
-
-
 
 -- Permissão basica: Apenas visualização dos dados;
 -- Permissão intermediario: Visualização dos dados, permissão para alterar algumas configurações;
